@@ -1,0 +1,4 @@
+﻿  main.cpp
+C:\Users\Daria\Desktop\OOP\Laboratorul1\problema3\main.cpp(5,23): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Daria\Desktop\OOP\Laboratorul1\problema3\main.cpp(5,42): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  problema3.vcxproj -> C:\Users\Daria\Desktop\OOP\Laboratorul1\problema3\x64\Debug\problema3.exe
