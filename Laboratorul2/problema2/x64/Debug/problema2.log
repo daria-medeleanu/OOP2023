@@ -1,0 +1,6 @@
+﻿  main.cpp
+  Student.cpp
+C:\Users\Daria\Desktop\OOP\Laboratorul2\problema2\Student.cpp(40,83): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  Students.cpp
+  Generating Code...
+  problema2.vcxproj -> C:\Users\Daria\Desktop\OOP\Laboratorul2\problema2\x64\Debug\problema2.exe
