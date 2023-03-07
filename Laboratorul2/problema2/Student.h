@@ -1,7 +1,7 @@
 #pragma once
 class Student{
 public:
-	char* name;
+	char* name=new char[100];
 	float gradeMath, gradeHistory, gradeEnglish, gradeAverage;
 	void SetName(const char* s);
 	char* GetName();
