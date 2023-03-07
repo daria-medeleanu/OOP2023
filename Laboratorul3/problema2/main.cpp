@@ -12,6 +12,6 @@ int main()
 	C.FillRect(1, 2, 5, 7, '-');
 	C.Clear();
 	C.DrawCircle(4, 4, 4, '*');
-	//C.FillCircle(5, 5, 4, '-');
+	C.FillCircle(5, 5, 4, '-');
 	C.Print();
 }

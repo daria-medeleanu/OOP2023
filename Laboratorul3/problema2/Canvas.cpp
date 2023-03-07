@@ -13,41 +13,34 @@ Canvas::Canvas(int width, int height)
 }
 void Canvas::DrawCircle(int x, int y, int ray, char ch)
 {
+    int n = ray * ray + 1;
+    int xr, yr;
     for (int i = 0; i < this->w; i++)
     {
         for (int j = 0; j < this->h; j++)
         {
-            int xr = j - this->w/2;
-            int yr = this->h/2 - i;
-            int sum = xr * xr + yr * yr;
-            if ((ray-1 < sum) && (sum < ray+1))
-                *(mat + i * this->h + j)=ch;
+            xr = i - ray;
+            yr = j - ray;
+            if (xr * xr + yr * yr <= ray * ray + 1)
+                *(mat + i * this->h + j) = ch;
         }
     }
 }
-/*void Canvas::DrawCircle(int x, int y, int ray, char ch)
-{
-    int n;
-    for(int i=0;i<this->w;i++)
-        for (int j = 0; j < this->h; j++)
-        {
-            n = (i - x) * (i - x) + (j - y) * (j - y);
-            if (ray == sqrt(n))
-                *(mat + i * this->h + j) = '*';
-        }
-}
 void Canvas::FillCircle(int x, int y, int ray, char ch)
 {
-    int n,d;
+    int n = ray * ray + 1;
+    int xr, yr;
     for (int i = 0; i < this->w; i++)
+    {
         for (int j = 0; j < this->h; j++)
         {
-            n = (i - x) * (i - x) + (j - y) * (j - y);
-            d = sqrt(n);
-            if (ray-1> d)
+            xr = i - ray;
+            yr = j - ray;
+            if (xr * xr + yr * yr < ray * ray + 1)
                 *(mat + i * this->h + j) = ch;
         }
-}*/
+    }
+}
 void Canvas::DrawRect(int left, int top, int right, int bottom, char ch)
 {
     for (int j = left; j <= right; j++) {
