@@ -1,0 +1,5 @@
+﻿  main.cpp
+C:\Users\Daria\Desktop\OOP\Laboratorul5\problema1\main.cpp(15,2): error C2679: binary '=': no operator found which takes a right-hand operand of type 'int' (or there is no acceptable conversion)
+C:\Users\Daria\Desktop\OOP\Laboratorul5\problema1\Number.h(60,1): message : could be 'Number &Number::operator =(const Number &)'
+C:\Users\Daria\Desktop\OOP\Laboratorul5\problema1\Number.h(51,10): message : or       'Number &Number::operator =(Number &&)'
+C:\Users\Daria\Desktop\OOP\Laboratorul5\problema1\main.cpp(15,2): message : while trying to match the argument list '(Number, int)'
