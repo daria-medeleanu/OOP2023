@@ -3,3 +3,6 @@ C:\Users\Daria\Desktop\OOP\Laboratorul5\problema1\main.cpp(15,2): error C2679: b
 C:\Users\Daria\Desktop\OOP\Laboratorul5\problema1\Number.h(60,1): message : could be 'Number &Number::operator =(const Number &)'
 C:\Users\Daria\Desktop\OOP\Laboratorul5\problema1\Number.h(51,10): message : or       'Number &Number::operator =(Number &&)'
 C:\Users\Daria\Desktop\OOP\Laboratorul5\problema1\main.cpp(15,2): message : while trying to match the argument list '(Number, int)'
+  Number.cpp
+C:\Users\Daria\Desktop\OOP\Laboratorul5\problema1\Number.cpp(6,25): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+  Generating Code...
