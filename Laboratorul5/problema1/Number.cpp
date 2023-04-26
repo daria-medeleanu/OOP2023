@@ -10,6 +10,32 @@ Number::Number(const char* string, int base)//constructor
 		m_Data[i] = string[i];
 	//memcpy(m_Data, string, m_Size);
 }
+Number::Number(const Number& other)//copy constructor
+	:m_Data(other.m_Data)
+{
+	printf("Copied\n");
+	m_Size = other.m_Size;
+	m_Base = other.m_Base;
+	m_Data = new char[m_Size + 1];
+	memcpy(m_Data, other.m_Data, m_Size);
+}
+Number::Number(Number&& other)//move constructor 
+	:m_Data(other.m_Data)
+{
+	printf("Moved!\n");
+	m_Size = other.m_Size;
+	m_Data = other.m_Data;
+	m_Base = other.m_Base;
+	other.m_Base = 0;
+	other.m_Size = 0;
+	other.m_Data = nullptr;
+}
+void Number:: Print()
+{
+	for (int i = 0; i < m_Size; i++)
+		printf("%c", m_Data[i]);
+	printf("\n");
+}
 int Number::GetDigitsCount()
 {
 	return m_Size;

@@ -9,49 +9,54 @@ private:
 	int m_Size;
 	int m_Base;
 public:
-	//Number() = default;
 	Number(const char* string, int base);//constructor
-
-	Number(const Number& other)//copy constructor
-		:m_Data(other.m_Data)
-	{
-		printf("Copied\n");
-		m_Size = other.m_Size;
-		m_Data = new char[m_Size];
-		memcpy(m_Data, other.m_Data, m_Size);
-	}
-
-	Number(Number&& other) noexcept //move constructor
-		:m_Data(other.m_Data)
-	{
-		printf("Moved!\n");
-		m_Size = other.m_Size;
-		m_Data = other.m_Data;
-
-		other.m_Data = 0;
-		other.m_Data = nullptr;
-	}
-
+	Number(const Number& other);//copy constructor
+	Number(Number&& other);//move constructor
 	~Number()
 	{
 		printf("Destroyed!\n");
 		delete m_Data;
 	}
-	void Print()
-	{
-		for (int i = 0; i < m_Size; i++)
-			printf("%c", m_Data[i]);
-		printf("\n");
-	}
+	void Print();
 	void SwitchBase(int newBase);
 	int  GetDigitsCount(); // returns the number of digits for the current number
 	int  GetBase(); // returns the current base
 	friend int operator+(Number &nr1, Number &nr2);
-	//friend int operator-(Number &nr1, Number &nr2);
-	Number& operator=(Number&& ex) //move assignment operator
+	Number& operator=(const Number& other)//copy assignment operator
+	{
+		if (this == &other) // Check for self-assignment
+		{
+			return *this;
+		}
+
+		// Free existing memory
+		//delete[] m_Data;
+
+		// Allocate new memory
+		m_Size = other.m_Size;
+		m_Base = other.m_Base;
+		m_Data = new char[m_Size]; // Allocate memory for m_Data, +1 for null-termination
+		strcpy_s(m_Data,strlen(other.m_Data+1), other.m_Data); // Copy other.m_Data to m_Data
+
+		//return *this;
+	}
+	Number& operator= (Number&& ex) //move assignment operator
 	{	
-		for (int i = 0; ex.m_Data[i] != '\0'; i++)
-			m_Data[i] = ex.m_Data[i];
+		if (this == &ex)
+		{
+			return *this;
+		}
+		delete[] m_Data;
+
+		m_Data = ex.m_Data;
+		m_Size = ex.m_Size;
+		m_Base = ex.m_Base;
+
+		ex.m_Data = nullptr;
+		ex.m_Size = 0;
+		ex.m_Base = 0;
+
+		return *this;
 	}
 	char& operator[](unsigned int index)//index operator
 	{
