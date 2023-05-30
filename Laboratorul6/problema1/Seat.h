@@ -25,6 +25,10 @@ class Seat : public Car
     {
         return this->SpSnow;
     }
+    const char* GetName()
+    {
+        return this->name;
+    }
     void printData()
     {
         printf("Seat\n");

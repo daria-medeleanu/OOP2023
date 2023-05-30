@@ -1,6 +1,5 @@
 #pragma once
 #include "Car.h"
-
 class Volvo : public Car
 {
     int fuelCapacity, fuelConsumption, SpRain, SpSunny, SpSnow;

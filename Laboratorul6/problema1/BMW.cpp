@@ -1,11 +1,10 @@
 #include "BMW.h"
 
-BMW::BMW()
-{
-	this->fuelCapacity = 10;
-	this->fuelConsumption = 20;
-	this->SpRain = 50;
-	this->SpSunny = 80;
-	this->SpSnow = 30;
-	this->name = "BMW";
+BMW::BMW() {
+    this->fuelCapacity = 60;
+    this->fuelConsumption = 15;
+    this->SpRain = 80;
+    this->SpSunny = 120;
+    this->SpSnow = 60;
+    this->name = "BMW";
 }

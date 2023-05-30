@@ -4,9 +4,9 @@
 class Car
 {
 public:
+	const char* name;
 	int fuelCapacity, fuelConsumption, SpRain, SpSunny, SpSnow;
 	float time;
-	const char* name;
 public:
 	virtual int GetFuelCapacity()=0;
 	virtual int GetFuelConsumption()=0;

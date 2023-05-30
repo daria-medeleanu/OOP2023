@@ -4,20 +4,20 @@
 #include <stdlib.h>
 class Circuit
 {
-	Car* vectorDate[100];
-	int currentIndex;
-	int lenght;
-	int weather;
-	float vecTime[100];
-	char* carName[100];
+	Car** cars;
+	float circuitLength;
+	int numCars;
+	int maxCars;
+	Weather weather;
+
 public:
 	Circuit();
-	void SetLength(int value);//lungimea circuitului
-	void SetWeather(int valueWeather);//0 pentru sunny 1,2 samd
-	void AddCar(Car* pointerCar);
+	~Circuit();
+	void SetLength(float length);//lungimea circuitului
+	void SetWeather(Weather weather);//0 pentru sunny 1,2 samd
+	void AddCar(Car* car);
 	void Race();
 	void ShowFinalRanks();
-	//void ShowWhoDidNotFinish();
+	void ShowWhoDidNotFinish();
 	void printCar();
 };
-
